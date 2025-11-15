@@ -104,3 +104,46 @@
   from { transform: translateY(40px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
+
+/* Dropdown styling to match input fields */
+.input-group select {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    background: transparent;
+    appearance: none; /* remove default arrow for modern look */
+}
+
+/* Add arrow icon manually */
+.input-group {
+    position: relative;
+}
+
+.input-group select {
+    padding-right: 25px; /* space for arrow */
+}
+
+.input-group i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #3f37c9;
+}
+
+/* Optional: add a custom arrow for select */
+.input-group select::-ms-expand {
+    display: none; /* IE hide default arrow */
+}
+
+.input-group select::after {
+    content: '\f0d7'; /* FontAwesome down arrow */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #3f37c9;
+}

@@ -11,7 +11,6 @@ export class Signup {
   router = inject(Router)
   loginOnTap() {
     this.router.navigateByUrl("/login")
-
   }
 
 }
