@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './signup.css',
 })
 export class Signup {
+  router = inject(Router)
+  loginOnTap() {
+    this.router.navigateByUrl("/login")
+
+  }
 
 }
