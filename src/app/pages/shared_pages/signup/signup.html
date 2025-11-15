@@ -7,13 +7,13 @@
 
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Set Username">
+            <input type="text" [(ngModel)]="username" placeholder="Set Username">
         </div>
 
         <!-- New Dropdown for User Type -->
         <div class="input-group">
             <i class="fas fa-user-cog"></i>
-            <select>
+            <select [(ngModel)]="userType">
                 <option value="" disabled selected>Select User Type</option>
                 <option value="admin">Admin</option>
                 <option value="student">Student</option>
@@ -22,15 +22,15 @@
 
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Set Password">
+            <input type="password" [(ngModel)]="password" placeholder="Set Password">
         </div>
 
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Confirm Password">
+            <input type="password" [(ngModel)]="confirmPassword" placeholder="Confirm Password">
         </div>
 
-        <button class="signup-btn">Sign Up</button>
+        <button class="signup-btn" (click)="signUpFunc()">Sign Up</button>
 
         <!-- Login redirect -->
         <p class="login-text">
