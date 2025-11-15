@@ -5,11 +5,11 @@ import { Signup } from './pages/signup/signup';
 export const routes: Routes = [
     {
         path: "",
-        component: Login
-    }, 
+        redirectTo: 'login', pathMatch: 'full'
+    },
     {
         path: "login",
-        component: Signup
+        component: Login
     },
     {
         path: "signup",
