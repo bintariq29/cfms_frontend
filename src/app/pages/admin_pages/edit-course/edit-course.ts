@@ -19,7 +19,8 @@ export class EditCourse {
   courseName = "";
   instructorName = "";
   totalFeedbacks = 0;
-  isActive = true;
+  isActive: boolean = true;
+
 
   ngOnInit() {
     this.courseId = Number(this.route.snapshot.paramMap.get("id"));
@@ -44,20 +45,20 @@ export class EditCourse {
       totalFeedbacks: 0,
       isActive: this.isActive
     };
-    alert(`${this.courseId}`)
-    alert 
-    debugger;
-    this.http.put<Course>("https://localhost:7212/UpdateCourse/" + this.courseId, obj)
+
+    console.log("Sending:", obj);
+
+    this.http.put<Course>(`https://localhost:7212/UpdateCourse/${this.courseId}`, obj)
       .subscribe({
-        next: (res) => {
+        next: res => {
           alert("Course updated successfully!");
         },
-        error: (err) => {
-          console.error("Update error:", err);
-          alert(`${err}`);
-        }
+        error: err => console.error(err)
       });
   }
+
+
+
 
 
 }

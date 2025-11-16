@@ -1,19 +1,32 @@
 <div class="edit-container">
-    <h2>Edit Course</h2>
+    <div class="edit-box">
+        <div class="edit-header">
+            <i class="fas fa-edit"></i>
+            <h2>Edit Course</h2>
+        </div>
 
-    <label>Course Name</label>
-    <input type="text" [(ngModel)]="courseName" />
+        <div class="input-group">
+            <i class="fas fa-book"></i>
+            <input type="text" [(ngModel)]="courseName" placeholder="Course Name" />
+        </div>
 
-    <label>Instructor Name</label>
-    <input type="text" [(ngModel)]="instructorName" />
+        <div class="input-group">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <input type="text" [(ngModel)]="instructorName" placeholder="Instructor Name" />
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-toggle-on"></i>
+            <select [(ngModel)]="isActive">
+                <option [ngValue]="true">Active</option>
+                <option [ngValue]="false">Inactive</option>
+            </select>
+        </div>
 
 
-
-    <label>Status</label>
-    <select [(ngModel)]="isActive">
-        <option [value]="true">Active</option>
-        <option [value]="false">Inactive</option>
-    </select>
-
-    <button (click)="updateCourse()">Update Course</button>
+        <button (click)="updateCourse()" class="edit-btn">Update Course</button>
+    </div>
 </div>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
