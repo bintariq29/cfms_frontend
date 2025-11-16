@@ -17,7 +17,6 @@ export class Login {
   onSignupTap() {
     this.router.navigateByUrl("/signup")
   }
-
   onLoginTap() {
     if (!this.username || this.username.trim() === "") {
       alert("Username is empty!");
@@ -56,8 +55,4 @@ export class Login {
 
 
   }
-
-
-
-
 }
