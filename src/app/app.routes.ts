@@ -4,6 +4,7 @@ import { Signup } from './pages/shared_pages/signup/signup';
 import { AdminHome } from './pages/admin_pages/admin-home/admin-home';
 import { StudentHome } from './pages/student_pages/student-home/student-home';
 import { CourseFeedbacks } from './pages/admin_pages/course-feedbacks/course-feedbacks';
+import { AddCourse } from './pages/admin_pages/add-course/add-course';
 
 
 export const routes: Routes = [
@@ -31,5 +32,10 @@ export const routes: Routes = [
     {
         path: "feedback/:id",
         component: CourseFeedbacks
+    },
+
+    {
+        path: "add_course",
+        component: AddCourse
     },
 ];

@@ -36,8 +36,7 @@ export class AdminHome implements OnInit {
       });
   }
   onAddCourse() {
-    alert('Add Course clicked');
-    // Navigate or open modal for adding a course
+    this.router.navigateByUrl("/add_course");
   }
 
   onShowFeedback(course: Course) {

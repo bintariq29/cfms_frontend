@@ -1,1 +1,36 @@
-<p>add-course works!</p>
+<div class="add-course-container">
+    <div class="add-course-box">
+
+        <div class="header">
+            <i class="fas fa-book"></i>
+            <h2>Add New Course</h2>
+        </div>
+
+        <!-- Course Name -->
+        <div class="input-group">
+            <i class="fas fa-heading"></i>
+            <input type="text" placeholder="Course Name" [(ngModel)]="courseName">
+        </div>
+
+        <!-- Instructor Name -->
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Instructor Name" [(ngModel)]="instructorName">
+        </div>
+
+
+
+        <!-- Active Checkbox -->
+        <div class="input-group checkbox-group">
+            <input type="checkbox" [(ngModel)]="isActive" id="activeCheckbox">
+            <label for="activeCheckbox">Active</label>
+        </div>
+
+        <!-- Add Button -->
+        <button class="add-btn" (click)="onAddCourse()">Add Course</button>
+
+    </div>
+</div>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
