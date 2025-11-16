@@ -5,6 +5,7 @@ import { AdminHome } from './pages/admin_pages/admin-home/admin-home';
 import { StudentHome } from './pages/student_pages/student-home/student-home';
 import { CourseFeedbacks } from './pages/admin_pages/course-feedbacks/course-feedbacks';
 import { AddCourse } from './pages/admin_pages/add-course/add-course';
+import { EditCourse } from './pages/admin_pages/edit-course/edit-course';
 
 
 export const routes: Routes = [
@@ -38,4 +39,9 @@ export const routes: Routes = [
         path: "add_course",
         component: AddCourse
     },
+
+    {
+        path: "edit_course/:id",
+        component: EditCourse
+    }
 ];

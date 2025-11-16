@@ -52,7 +52,9 @@ export class AdminHome implements OnInit {
     }
   }
 
-  onEditCourse(course: Course) { alert(`Edit ${course.courseName}`); }
+  onEditCourse(course: Course) {
+    this.router.navigate(['/edit_course', course.id]);
+  }
 
 
   onDeleteCourse(course: Course) {
