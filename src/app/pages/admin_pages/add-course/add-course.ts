@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -11,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class AddCourse {
 
   http = inject(HttpClient);
+  router = inject(Router);
 
   courseName: string = '';
   instructorName: string = '';
@@ -37,6 +39,8 @@ export class AddCourse {
         next: (res) => {
           alert("Course added successfully!");
           console.log(res);
+          this.router.navigateByUrl("/admin_home");
+
         },
         error: (err) => {
           console.error(err);

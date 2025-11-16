@@ -53,6 +53,23 @@ export class AdminHome implements OnInit {
   }
 
   onEditCourse(course: Course) { alert(`Edit ${course.courseName}`); }
-  onDeleteCourse(course: Course) { alert(`Delete ${course.courseName}`); }
+
+
+  onDeleteCourse(course: Course) {
+    if (confirm(`Are you sure you want to delete the course "${course.courseName}"?`)) {
+      this.http.delete(`https://localhost:7212/DeleteCourse/${course.id}`)
+        .subscribe({
+          next: () => {
+            alert(`Course "${course.courseName}" deleted successfully!`);
+            // Remove the deleted course from the list
+            this.courses = this.courses.filter(c => c.id !== course.id);
+          },
+          error: (err) => {
+            console.error('Error deleting course:', err);
+            alert('Failed to delete the course.');
+          }
+        });
+    }
+  }
 
 }
