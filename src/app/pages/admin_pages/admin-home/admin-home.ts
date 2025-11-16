@@ -10,6 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-home.css',
 })
 export class AdminHome implements OnInit {
+
+  activeMenuIndex: number | null = null;
   ngOnInit() {
     this.getCourse()
 
@@ -39,5 +41,16 @@ export class AdminHome implements OnInit {
     alert(`Show all feedbacks for ${course.courseName}`);
     // Navigate or open feedbacks for this course
   }
+
+  toggleMenu(index: number) {
+    if (this.activeMenuIndex === index) {
+      this.activeMenuIndex = null; // close if already open
+    } else {
+      this.activeMenuIndex = index;
+    }
+  }
+
+  onEditCourse(course: Course) { alert(`Edit ${course.courseName}`); }
+  onDeleteCourse(course: Course) { alert(`Delete ${course.courseName}`); }
 
 }

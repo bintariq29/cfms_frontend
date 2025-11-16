@@ -1,19 +1,28 @@
 <div class="courses-container">
-    <div class="courses-header">
-        <h2>Courses</h2>
-        <button class="add-btn" (click)="onAddCourse()">Add Course</button>
-    </div>
+  <div class="courses-header">
+    <h2>Courses</h2>
+    <button class="add-btn" (click)="onAddCourse()">Add Course</button>
+  </div>
 
-    <div class="courses-grid">
-        <div class="course-card" *ngFor="let course of courses">
-
-            <h3>{{ course.courseName }}</h3>
-            <p><strong>Instructor:</strong> {{ course.instructorName }}</p>
-            <p><strong>Total Feedbacks:</strong> {{ course.totalFeedbacks }}</p>
-            <p><strong>Status:</strong> {{ course.isActive ? 'Active' : 'Inactive' }}</p>
-            <button class="feedback-btn" (click)="onShowFeedback(course)">Show All Feedbacks</button>
+  <div class="courses-grid">
+    <div class="course-card" *ngFor="let course of courses; let i = index">
+      
+      <!-- Three-dot menu -->
+      <div class="menu-container">
+        <i class="fas fa-ellipsis-v" (click)="toggleMenu(i)"></i>
+        <div class="menu" *ngIf="activeMenuIndex === i">
+          <button (click)="onEditCourse(course)">Edit</button>
+          <button (click)="onDeleteCourse(course)">Delete</button>
         </div>
+      </div>
+
+      <h3>{{ course.courseName }}</h3>
+      <p><strong>Instructor:</strong> {{ course.instructorName }}</p>
+      <p><strong>Total Feedbacks:</strong> {{ course.totalFeedbacks }}</p>
+      <p><strong>Status:</strong> {{ course.isActive ? 'Active' : 'Inactive' }}</p>
+      <button class="feedback-btn" (click)="onShowFeedback(course)">Show All Feedbacks</button>
     </div>
+  </div>
 </div>
 
 <!-- Font Awesome Icons -->
