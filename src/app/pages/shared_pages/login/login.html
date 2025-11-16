@@ -7,15 +7,15 @@
 
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Enter Username">
+            <input type="text" [(ngModel)]="username" placeholder="Enter Username">
         </div>
 
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Enter Password">
+            <input type="password" [(ngModel)]="password" placeholder="Enter Password">
         </div>
 
-        <button class="login-btn">Login</button>
+        <button (click)="onLoginTap()" class="login-btn">Login</button>
 
         <!-- New Added Text -->
         <p class="signup-text">
