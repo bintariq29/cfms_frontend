@@ -1,1 +1,32 @@
-<p>course-feedbacks works!</p>
+<div class="feedback-container">
+
+    <!-- HEADER -->
+    <div class="feedback-header">
+        <h2>Course Feedbacks</h2>
+    </div>
+
+    <!-- FEEDBACK LIST -->
+    <div class="feedback-list">
+
+        <div class="feedback-card" *ngFor="let fb of feedbacks">
+
+            <h3>{{ fb.studentName }}</h3>
+
+            <p><strong>Course:</strong> {{ fb.courseName }}</p>
+            <p><strong>Student:</strong> {{ fb.studentName }}</p>
+            <p><strong>Rating:</strong> ⭐ {{ fb.rating }}</p>
+            <p><strong>Comment:</strong> {{ fb.comment }}</p>
+            <p><strong>Posted on:</strong> {{ fb.createdDate | date:'medium' }}</p>
+
+
+            <!-- ATTACHMENT BUTTON -->
+            <div *ngIf="fb.attachment" class="download-box">
+                <button (click)="download(fb.attachment, fb.studentName + '_attachment')">
+                    Download Attachment
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Login } from './pages/shared_pages/login/login';
 import { Signup } from './pages/shared_pages/signup/signup';
 import { AdminHome } from './pages/admin_pages/admin-home/admin-home';
 import { StudentHome } from './pages/student_pages/student-home/student-home';
+import { CourseFeedbacks } from './pages/admin_pages/course-feedbacks/course-feedbacks';
 
 
 export const routes: Routes = [
@@ -25,5 +26,10 @@ export const routes: Routes = [
     {
         path: "student_home",
         component: StudentHome
+    },
+
+    {
+        path: "feedback/:id",
+        component: CourseFeedbacks
     },
 ];

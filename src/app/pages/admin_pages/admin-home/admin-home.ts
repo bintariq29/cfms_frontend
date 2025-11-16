@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Course } from '../../../models/course_model';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-home',
@@ -10,13 +11,15 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-home.css',
 })
 export class AdminHome implements OnInit {
-
+  http = inject(HttpClient);
+  router = inject(Router)
   activeMenuIndex: number | null = null;
+
   ngOnInit() {
     this.getCourse()
 
   }
-  http = inject(HttpClient);
+
   courses: Course[] = [];
   getCourse() {
     this.http.get<Course[]>('https://localhost:7212/GetCourses')
@@ -38,8 +41,8 @@ export class AdminHome implements OnInit {
   }
 
   onShowFeedback(course: Course) {
-    alert(`Show all feedbacks for ${course.courseName}`);
-    // Navigate or open feedbacks for this course
+    debugger;
+    this.router.navigate(['/feedback', course.id]);
   }
 
   toggleMenu(index: number) {
