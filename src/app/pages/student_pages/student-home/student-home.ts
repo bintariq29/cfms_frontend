@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-student-home',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './student-home.html',
   styleUrl: './student-home.css',
 })
-export class StudentHome {
+export class StudentHome implements OnInit {
+  constructor(private route: ActivatedRoute) { }
+  studentName: String = "";
+  ngOnInit(): void {
+    this.studentName = String(this.route.snapshot.paramMap.get('name'));
+  }
+
 
 }

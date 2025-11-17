@@ -26,7 +26,7 @@ export const routes: Routes = [
         component: AdminHome
     },
     {
-        path: "student_home",
+        path: "student_home/:name",
         component: StudentHome
     },
 

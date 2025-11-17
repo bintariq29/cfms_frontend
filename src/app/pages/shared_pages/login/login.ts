@@ -36,11 +36,14 @@ export class Login {
         // Check password
         if (res.password === this.password) {
           alert("Login Successful!");
-          if (res.userType == "admin") {
+          if (res.userType == "admin" || res.userType == "Admin") {
             this.router.navigateByUrl("/admin_home")
           }
-          if (res.userType == "student") {
-            this.router.navigateByUrl("/student_home")
+          debugger;
+          if (res.userType == "student" || res.userType == "Student") {
+            alert(`Student`);
+            this.router.navigate(['/student_home', this.username]);
+
           }
         } else {
           alert("Incorrect Password!");
