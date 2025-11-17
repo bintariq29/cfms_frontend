@@ -8,7 +8,17 @@
     <!-- FEEDBACK LIST -->
     <div class="feedback-list">
 
-        <div class="feedback-card" *ngFor="let fb of feedbacks">
+        <div class="feedback-card" *ngFor="let fb of feedbacks; let i = index">
+
+            <!-- THREE DOTS MENU -->
+            <div class="menu-wrapper">
+                <i class="fas fa-ellipsis-v menu-icon" (click)="toggleMenu(i)"></i>
+
+                <div class="popup-menu" *ngIf="activeMenuIndex === i">
+                    <button (click)="onEditFeedback(fb)">Edit</button>
+                    <button (click)="onDeleteFeedback(fb)">Delete</button>
+                </div>
+            </div>
 
             <h3>{{ fb.studentName }}</h3>
 
@@ -17,6 +27,7 @@
             <p><strong>Rating:</strong> ⭐ {{ fb.rating }}</p>
             <p><strong>Comment:</strong> {{ fb.comment }}</p>
             <p><strong>Posted on:</strong> {{ fb.createdDate | date:'medium' }}</p>
+
             <!-- ATTACHMENT BUTTON -->
             <div *ngIf="fb.attachment" class="download-box">
                 <button (click)="download(fb.attachment, fb.studentName + '_attachment')">
@@ -28,3 +39,7 @@
 
     </div>
 </div>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

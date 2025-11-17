@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Feedback } from '../../../models/feedback_model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { CommonModule } from '@angular/common';
@@ -14,15 +14,17 @@ export class MyFeedbacks implements OnInit {
   constructor(private route: ActivatedRoute) { }
   name: string = '';
   id: number = 0;
+  activeMenuIndex: number | null = null;
   ngOnInit(): void {
     this.name = String(this.route.snapshot.paramMap.get('name'));
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.getFeedBackByCourseIdAndStudentName(this.name, this.id);
   }
   http = inject(HttpClient);
+  router = inject(Router)
 
   feedbacks: Feedback[] = [];
-  getFeedBackByCourseIdAndStudentName(name: string, id:number) {
+  getFeedBackByCourseIdAndStudentName(name: string, id: number) {
     debugger;
     this.http.get<Feedback[]>(`https://localhost:7212/GetFeedbacksByStudent/${name}/${id}`)
       .subscribe({
@@ -77,6 +79,37 @@ export class MyFeedbacks implements OnInit {
     link.click();
 
     URL.revokeObjectURL(url);
+  }
+
+  toggleMenu(index: number) {
+    if (this.activeMenuIndex === index) {
+      this.activeMenuIndex = null; // close if already open
+    } else {
+      this.activeMenuIndex = index;
+    }
+  }
+
+
+  onEditFeedback(feedback: Feedback) {
+    this.router.navigate(['/edit_course', feedback.id]);
+  }
+
+
+  onDeleteFeedback(feedback: Feedback) {
+    if (confirm(`Are you sure you want to delete the Feedback: "${feedback.comment}"?`)) {
+      this.http.delete(`https://localhost:7212/DeleteFeedbackById/${feedback.id}`)
+        .subscribe({
+          next: () => {
+            alert(`Feedback "${feedback.comment}" deleted successfully!`);
+            // Remove the deleted course from the list
+            this.feedbacks = this.feedbacks.filter(c => c.id !== feedback.id);
+          },
+          error: (err) => {
+            console.error('Error deleting feedback:', err);
+            alert('Failed to delete the feedback.');
+          }
+        });
+    }
   }
 
 }
