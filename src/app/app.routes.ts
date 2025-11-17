@@ -52,7 +52,7 @@ export const routes: Routes = [
         component: EditCourse
     },
     {
-        path: "add_feedback/:course/:instructor",
+        path: "add_feedback/:course/:instructor/:course_id/:student_name",
         component: AddFeedback
     }
 ];

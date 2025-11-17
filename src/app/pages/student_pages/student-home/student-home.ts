@@ -41,7 +41,7 @@ export class StudentHome implements OnInit {
   }
 
   addFeedBack(course: Course) {
-    this.router.navigate(["/add_feedback", course.courseName, course.instructorName]);
+    this.router.navigate(["/add_feedback", course.courseName, course.instructorName, course.id, this.studentName]);
   }
 
 
