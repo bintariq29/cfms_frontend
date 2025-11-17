@@ -1,0 +1,256 @@
+/* Full screen background */
+.courses-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #5e60ce, #64dfdf);
+    box-sizing: border-box;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Header */
+.courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.courses-header h2 {
+    font-size: 28px;
+    color: #3a0ca3;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #3f37c9;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px #00000033;
+}
+
+.add-btn:hover {
+    background: #4895ef;
+}
+
+/* Courses Grid (2 columns) */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Course Card */
+.course-card {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px #00000022;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: slideUp 0.7s ease;
+}
+
+.course-card h3 {
+    margin: 0 0 10px 0;
+    color: #3a0ca3;
+}
+
+.course-card p {
+    margin: 5px 0;
+    color: #3f37c9;
+}
+
+/* Feedback Button */
+.feedback-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #3f37c9;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px #00000033;
+}
+
+.feedback-btn:hover {
+    background: #4895ef;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Courses Grid and Card (existing CSS) */
+.courses-container {
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #5e60ce, #64dfdf);
+    box-sizing: border-box;
+    animation: fadeIn 1.2s ease;
+}
+
+.courses-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.courses-header h2 {
+    font-size: 28px;
+    color:  #fff;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background: #3f37c9;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px #00000033;
+}
+
+.add-btn:hover {
+    background: #4895ef;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px #00000022;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: slideUp 0.7s ease;
+    position: relative;
+}
+
+.course-card h3 {
+    margin: 0 0 10px 0;
+    color: #3a0ca3;
+}
+
+.course-card p {
+    margin: 5px 0;
+    color: #3f37c9;
+}
+
+.feedback-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #3f37c9;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px #00000033;
+}
+
+.feedback-btn:hover {
+    background: #4895ef;
+}
+
+/* Three-dot menu */
+.menu-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.menu-container i {
+    cursor: pointer;
+    font-size: 18px;
+    color: #3f37c9;
+}
+
+.menu {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px #00000033;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu button {
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    color: #3f37c9;
+    transition: 0.2s;
+}
+
+.menu button:hover {
+    background: #f0f0f0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
