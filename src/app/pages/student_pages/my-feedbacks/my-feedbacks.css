@@ -1,0 +1,77 @@
+/* Background */
+.feedback-container {
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #5e60ce, #64dfdf);
+  animation: fadeIn 1s ease;
+}
+
+/* Header */
+.feedback-header h2 {
+  font-size: 30px;
+  color: #ffffffcc;
+  margin-bottom: 25px;
+}
+
+/* Feedback Cards Grid */
+.feedback-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.feedback-card {
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 15px #00000033;
+  animation: slideUp 0.7s ease;
+}
+
+.feedback-card h3 {
+  margin-top: 0;
+  color: #3a0ca3;
+}
+
+.feedback-card p {
+  margin: 6px 0;
+  color: #3f37c9;
+}
+
+.date {
+  font-size: 13px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Download Button */
+.download-box button {
+  margin-top: 15px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #3f37c9;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #00000033;
+  transition: 0.3s;
+}
+
+.download-box button:hover {
+  background: #4895ef;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}

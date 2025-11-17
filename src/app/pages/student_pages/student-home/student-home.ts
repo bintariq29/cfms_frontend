@@ -35,9 +35,9 @@ export class StudentHome implements OnInit {
     this.getCourse();
   }
 
-  onShowFeedback(course: Course) {
+  showMyFeedback(course: Course) {
     debugger;
-    this.router.navigate(['/feedback', course.id]);
+    this.router.navigate(['/my_feedback', this.studentName, course.id]);
   }
 
 

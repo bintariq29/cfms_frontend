@@ -9,7 +9,7 @@
             <p><strong>Instructor:</strong> {{ course.instructorName }}</p>
             <p><strong>Total Feedbacks:</strong> {{ course.totalFeedbacks }}</p>
             <p><strong>Status:</strong> {{ course.isActive ? 'Active' : 'Inactive' }}</p>
-            <button class="feedback-btn" (click)="onShowFeedback(course)">Show My Feedbacks</button>
+            <button class="feedback-btn" (click)="showMyFeedback(course)">Show My Feedbacks</button>
         </div>
     </div>
 </div>
