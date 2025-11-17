@@ -1,1 +1,45 @@
-<p>add-feedback works!</p>
+<div class="feedback-container">
+    <div class="feedback-box">
+
+        <div class="feedback-header">
+            <i class="fas fa-comment-dots"></i>
+            <h2>Add Feedback</h2>
+        </div>
+
+        <!-- Student Name -->
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" [(ngModel)]="instructorName" placeholder="Enter Instructor Name" readonly>
+        </div>
+
+        <!-- Course Name -->
+        <div class="input-group">
+            <i class="fas fa-book"></i>
+            <input type="text" [(ngModel)]="courseName" placeholder="Enter Course Name" readonly>
+        </div>
+
+        <!-- Comment -->
+        <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea [(ngModel)]="comment" placeholder="Enter Feedback Comment"></textarea>
+        </div>
+
+        <!-- Rating -->
+        <div class="input-group">
+            <i class="fas fa-star"></i>
+            <input type="number" min="1" max="5" [(ngModel)]="rating" placeholder="Rating (1–5)">
+        </div>
+
+        <!-- Attachment -->
+        <div class="input-group">
+            <i class="fas fa-paperclip"></i>
+            <input type="file" (change)="onFileSelect($event)">
+        </div>
+
+        <!-- Submit Button -->
+        <button class="save-btn" (click)="onSaveFeedback()">Save Feedback</button>
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

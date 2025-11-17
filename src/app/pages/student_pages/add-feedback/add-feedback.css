@@ -1,0 +1,89 @@
+/* Background */
+.feedback-container {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #5e60ce, #64dfdf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.2s ease;
+}
+
+/* Card Box */
+.feedback-box {
+  width: 380px;
+  background: #ffffffcc;
+  backdrop-filter: blur(10px);
+  padding: 35px 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px #00000033;
+  text-align: center;
+  animation: slideUp 0.7s ease;
+}
+
+/* Header */
+.feedback-header i {
+  font-size: 55px;
+  color: #4cc9f0;
+}
+
+.feedback-header h2 {
+  margin-top: 10px;
+  font-size: 26px;
+  color: #3a0ca3;
+}
+
+/* Input Group */
+.input-group {
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 18px 0;
+  box-shadow: 0 4px 10px #0000001a;
+}
+
+.input-group i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #3f37c9;
+}
+
+.input-group input,
+.input-group textarea {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Save Button */
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: #3f37c9;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px #00000033;
+}
+
+.save-btn:hover {
+  background: #4895ef;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

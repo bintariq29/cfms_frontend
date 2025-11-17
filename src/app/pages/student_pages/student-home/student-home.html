@@ -9,9 +9,8 @@
             <p><strong>Instructor:</strong> {{ course.instructorName }}</p>
             <p><strong>Total Feedbacks:</strong> {{ course.totalFeedbacks }}</p>
             <p><strong>Status:</strong> {{ course.isActive ? 'Active' : 'Inactive' }}</p>
-            <button *ngIf="course.totalFeedbacks<=10" class="feedback-btn" (click)="showMyFeedback(course)">Add
+            <button *ngIf="course.totalFeedbacks<=10" class="feedback-btn" (click)="addFeedBack(course)">Add
                 Feedback</button>
-
             <button class="feedback-btn" (click)="showMyFeedback(course)">Show My Feedbacks</button>
         </div>
     </div>
