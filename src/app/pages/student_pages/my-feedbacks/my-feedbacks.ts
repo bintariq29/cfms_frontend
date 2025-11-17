@@ -91,7 +91,7 @@ export class MyFeedbacks implements OnInit {
 
 
   onEditFeedback(feedback: Feedback) {
-    this.router.navigate(['/edit_course', feedback.id]);
+    this.router.navigate(['/edit_feedback', feedback.id]);
   }
 
 

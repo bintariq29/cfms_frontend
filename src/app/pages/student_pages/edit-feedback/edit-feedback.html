@@ -1,1 +1,46 @@
-<p>edit-feedback works!</p>
+<div class="feedback-container">
+    <div class="feedback-box">
+
+        <div class="feedback-header">
+            <i class="fas fa-edit"></i>
+            <h2>Edit Feedback</h2>
+        </div>
+
+
+
+        <!-- Course Name -->
+        <div class="input-group">
+            <i class="fas fa-book"></i>
+            <input type="text" [(ngModel)]="courseName" placeholder="Course Name" readonly>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-book"></i>
+            <input type="text" [(ngModel)]="studentName" placeholder="Student Name" readonly>
+        </div>
+
+        <!-- Comment -->
+        <div class="input-group">
+            <i class="fas fa-comment"></i>
+            <textarea [(ngModel)]="comment" placeholder="Update Feedback Comment"></textarea>
+        </div>
+
+        <!-- Rating -->
+        <div class="input-group">
+            <i class="fas fa-star"></i>
+            <input type="number" min="1" max="5" [(ngModel)]="rating" placeholder="Rating (1–5)">
+        </div>
+
+        <!-- Attachment (Optional Replace) -->
+        <div class="input-group">
+            <i class="fas fa-paperclip"></i>
+            <input type="file" (change)="onFileSelect($event)">
+        </div>
+
+        <!-- Update Button -->
+        <button class="save-btn" (click)="onUpdateFeedback()">Update Feedback</button>
+
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

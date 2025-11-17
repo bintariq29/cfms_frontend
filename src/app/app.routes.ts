@@ -8,6 +8,7 @@ import { AddCourse } from './pages/admin_pages/add-course/add-course';
 import { EditCourse } from './pages/admin_pages/edit-course/edit-course';
 import { MyFeedbacks } from './pages/student_pages/my-feedbacks/my-feedbacks';
 import { AddFeedback } from './pages/student_pages/add-feedback/add-feedback';
+import { EditFeedback } from './pages/student_pages/edit-feedback/edit-feedback';
 
 
 export const routes: Routes = [
@@ -54,5 +55,9 @@ export const routes: Routes = [
     {
         path: "add_feedback/:course/:instructor/:course_id/:student_name",
         component: AddFeedback
-    }
+    },
+    {
+        path: "edit_feedback/:id",
+        component: EditFeedback
+    },
 ];
